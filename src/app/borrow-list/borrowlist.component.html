@@ -1,0 +1,19 @@
+<div class="row">
+  <div>
+    <h2>Borrowed Books:</h2>
+    <hr>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3 column" (click)="onDisplayItem(i)" *ngFor= "let book of books; let i = index">
+      <a class ="list-group-item clearfix"
+      style="cursor: pointer;"
+      data-toggle="modal"
+      data-target="#myModal">
+      <div class="imgContainer">
+        <img class="img-responsive" src="{{book.imgUrl}}" style="max-height:300px;max-width300px" alt="Book Images">
+      </div>
+    </a>
+  </div>
+</div>
+<app-borrow-list-edit></app-borrow-list-edit>

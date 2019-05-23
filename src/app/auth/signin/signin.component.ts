@@ -1,0 +1,21 @@
+import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms'
+
+import { AuthService } from '../auth.service';
+
+@Component({
+  selector: 'app-signin',
+  templateUrl: './signin.component.html',
+  styleUrls: ['./signin.component.css']
+})
+
+export class SigninComponent {
+  
+  constructor(private authService: AuthService){}
+
+  onSignin(f: NgForm){
+    const email = f.value.email;
+    const password = f.value.password;
+    this.authService.signInUser(email, password);
+  }
+}

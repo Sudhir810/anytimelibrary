@@ -1,0 +1,18 @@
+<div class="col-md-12">
+  <div class="row">
+    <h1>Books borrowed by different users</h1>
+  </div>
+  <div class="row" *ngFor= "let book of books; let i = index">
+    <h1>Email: {{book.email}}</h1>
+    <div class="col-md-3 column" *ngFor= "let bookElement of book.book; let i = index">
+        <a class ="list-group-item clearfix"
+        style="cursor: pointer;"
+        data-toggle="modal"
+        data-target="#myModal">
+        <div class="imgContainer">
+          <img class="img-responsive" src="{{bookElement.imgUrl}}" style="max-height:300px;max-width300px" alt="Book Images">
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

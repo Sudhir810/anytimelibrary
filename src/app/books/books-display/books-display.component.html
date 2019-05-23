@@ -1,0 +1,38 @@
+<div id="myModal" class="modal fade" role="dialog" *ngIf="authService.isAuthenticated()">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{bookElement.bookTitle}}</h4>
+      </div>
+      <div class="modal-body">
+        <img src="{{bookElement.imgUrl}}" alt="{{bookElement.bookTitle}}" style="float:right;height:120px;">
+        <p>Topic: {{bookElement.bookTitle }}</p>
+        <p>Author: {{bookElement.author }}</p>
+        <p>Cost: {{bookElement.cost}}</p>
+        <p>Book Name: {{bookElement.bookTitle }}</p>
+        <p style="text-align: right;margin:3px;" *ngIf="!bookElement.issued">Sorry Currently not available.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" name="button" (click)="addtoBorrowList()" class="btn btn-success" [disabled]="!bookElement.issued">Borrow</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="myModal" class="modal fade" role="dialog" *ngIf="!authService.isAuthenticated()">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Any Time Library</h2>
+      </div>
+      <div class="modal-body">
+        <h3>Please Signin to view details of the book.</h3>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>

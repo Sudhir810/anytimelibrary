@@ -1,0 +1,21 @@
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{bookElement.bookTitle}}</h4>
+      </div>
+      <div class="modal-body">
+        <img src="{{bookElement.imgUrl}}" alt="{{bookElement.bookTitle}}" style="float:right;height:120px;">
+        <p>Topic: {{bookElement.bookTitle }}</p>
+        <p>Author: {{bookElement.author }}</p>
+        <p>Cost: {{bookElement.cost}}</p>
+        <p>Book Name: {{bookElement.bookTitle }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" name="button" (click)="removeFromBorrowList()" class="btn btn-danger" [disabled]="bookElement.issued">Return</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-xs-8">
+    <h2>Click on book to view details</h2>
+  </div>
+</div>
+<div class="row">
+  <app-book-item *ngFor="let book of books; let i = index"
+  [bookElement]= 'book'
+  [index]= "i" >
+</app-book-item>
+</div>
